@@ -4,7 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import chalk from 'chalk';
 
-dotenv.config();
+dotenv.config({ path: './.env' });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -23,4 +23,4 @@ mongoose.connect(process.env.MONGO_URL).then(()=> {
     });
 }).catch((err) => {
     console.error(chalk.red('Ошибка подключения к MongoDB:', err.message));
-});f
+});
